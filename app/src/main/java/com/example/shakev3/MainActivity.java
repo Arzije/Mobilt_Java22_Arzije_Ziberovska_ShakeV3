@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         if (accelerometerSensor != null) {
             sensorManager.unregisterListener(this, accelerometerSensor);
         }
+        if (lightSensor != null) {
+            sensorManager.unregisterListener(this, lightSensor);
+        }
     }
 
     private void handleLightSensor() {
@@ -136,5 +139,28 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
 
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (accelerometerSensor != null) {
+            sensorManager.unregisterListener(this, accelerometerSensor);
+        }
+        if (lightSensor != null) {
+            sensorManager.unregisterListener(this, lightSensor);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (accelerometerSensor != null) {
+            sensorManager.unregisterListener(this, accelerometerSensor);
+        }
+        if (lightSensor != null) {
+            sensorManager.unregisterListener(this, lightSensor);
+        }
     }
 }
