@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             double accelerationMagnitude = Math.sqrt(xValue * xValue + yValue * yValue + zValue * zValue);
 
-            final double shakeThreshold = 10.0;
+            final double shakeThreshold = 11.0;
             final long shakeInterval = 1000;
 
             if (accelerationMagnitude > shakeThreshold) {
@@ -140,7 +140,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void onAccuracyChanged(Sensor sensor, int i) {
 
     }
-
 
     @Override
     protected void onStop() {
